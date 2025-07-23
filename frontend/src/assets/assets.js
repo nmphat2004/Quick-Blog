@@ -58,10 +58,8 @@ export const assets = {
     dashboard_icon_3,
     dashboard_icon_4,
 }
-export const blogCategories = ['All', 'Technology', 'Startup', 'Lifestyle', 'Finance']
 
-export const blog_data = [
-    {
+export const blog_data = [{
         "_id": "6805ee7dd8f584af5da78d37",
         "title": "A detailed step by step guide to manage your lifestyle",
         "description": "<h1>A Simple Step-by-Step Guide to Managing Your Lifestyle</h1><p>If you're looking to improve your health, boost productivity, and create a balanced life, managing your lifestyle intentionally is key. Here's a short guide to help you take control of your daily habits and overall well-being.</p><h2>1. Assess Your Current Lifestyle</h2><p>Track your habits for a week. Note your energy levels, sleep, diet, and daily routines. Reflect on what's working and what needs change.</p><h2>2. Focus on Health</h2><p>Eat balanced meals, stay hydrated, get enough sleep, and move your body daily. Mental health matters too—set boundaries and practice mindfulness.</p><h2>3. Set Clear Goals</h2><p>Break your goals into categories like health, career, and relationships. Make them specific and achievable.</p><h2>4. Create Daily Routines</h2><p>Establish morning and evening routines. Plan your days and weeks with intention using a planner or digital calendar.</p><h2>5. Manage Time Wisely</h2><p>Prioritize important tasks, limit distractions, and take regular breaks. Learn to say no when needed.</p><h2>6. Handle Finances Smartly</h2><p>Track your spending, set a budget, save regularly, and build financial literacy. Financial stability supports overall peace of mind.</p><h2>7. Build Strong Relationships</h2><p>Surround yourself with supportive people. Communicate openly and maintain healthy boundaries.</p><h2>8. Keep Learning</h2><p>Read, take online courses, or explore new hobbies. Personal growth keeps life fulfilling and dynamic.</p><h2>9. Declutter Regularly</h2><p>Simplify your physical and digital spaces. Clear surroundings help reduce stress and increase focus.</p><h2>10. Celebrate Small Wins</h2><p>Track your progress, reflect often, and reward yourself for sticking to positive habits. Consistency is more important than perfection.</p><p><strong>Final Tip</strong>: Start small, stay consistent, and review your lifestyle regularly. With steady effort, a well-managed life becomes a natural way of living.</p>",
@@ -183,58 +181,57 @@ export const blog_data = [
     }
 ]
 
-export const comments_data = [
-        {
-            "_id": "6811ed9e7836a82ba747cb25",
-            "blog": blog_data[0],
-            "name": "Michael Scott",
-            "content": "This is my new comment",
-            "isApproved": false,
-            "createdAt": "2025-04-30T09:30:06.918Z",
-            "updatedAt": "2025-04-30T09:30:06.918Z",
-            "__v": 0
-        },
-        {
-            "_id": "6810a752fbb942aa7cbf4adb",
-            "blog": blog_data[1],
-            "name": "John Doe",
-            "content": "This is a nice blog",
-            "isApproved": false,
-            "createdAt": "2025-04-29T10:17:54.832Z",
-            "updatedAt": "2025-04-29T10:17:54.832Z",
-            "__v": 0
-        },
-        {
-            "_id": "680779aebef75c08f8b4898f",
-            "blog": blog_data[2],
-            "name": "Jack London",
-            "content": "Hi this blog is must to read",
-            "isApproved": true,
-            "createdAt": "2025-04-22T11:12:46.547Z",
-            "updatedAt": "2025-04-22T11:13:10.015Z",
-            "__v": 0
-        },
-        {
-            "_id": "680770aeb2897e5c28bf9b26",
-            "blog": blog_data[3],
-            "name": "Sam Smith",
-            "content": "This is the best blog, everybody should read it",
-            "isApproved": false,
-            "createdAt": "2025-04-22T10:34:22.020Z",
-            "updatedAt": "2025-04-22T10:34:22.020Z",
-            "__v": 0
-        },
-        {
-            "_id": "68076468e32055c94a696cf5",
-            "blog": blog_data[4],
-            "name": "Peter Lawrence",
-            "content": "Honestly, I did not expect this to work, but it totally did. Saved my project!",
-            "isApproved": true,
-            "createdAt": "2025-04-22T09:42:00.444Z",
-            "updatedAt": "2025-04-22T10:24:55.626Z",
-            "__v": 0
-        }
-    ]
+export const comments_data = [{
+        "_id": "6811ed9e7836a82ba747cb25",
+        "blog": blog_data[0],
+        "name": "Michael Scott",
+        "content": "This is my new comment",
+        "isApproved": false,
+        "createdAt": "2025-04-30T09:30:06.918Z",
+        "updatedAt": "2025-04-30T09:30:06.918Z",
+        "__v": 0
+    },
+    {
+        "_id": "6810a752fbb942aa7cbf4adb",
+        "blog": blog_data[1],
+        "name": "John Doe",
+        "content": "This is a nice blog",
+        "isApproved": false,
+        "createdAt": "2025-04-29T10:17:54.832Z",
+        "updatedAt": "2025-04-29T10:17:54.832Z",
+        "__v": 0
+    },
+    {
+        "_id": "680779aebef75c08f8b4898f",
+        "blog": blog_data[2],
+        "name": "Jack London",
+        "content": "Hi this blog is must to read",
+        "isApproved": true,
+        "createdAt": "2025-04-22T11:12:46.547Z",
+        "updatedAt": "2025-04-22T11:13:10.015Z",
+        "__v": 0
+    },
+    {
+        "_id": "680770aeb2897e5c28bf9b26",
+        "blog": blog_data[3],
+        "name": "Sam Smith",
+        "content": "This is the best blog, everybody should read it",
+        "isApproved": false,
+        "createdAt": "2025-04-22T10:34:22.020Z",
+        "updatedAt": "2025-04-22T10:34:22.020Z",
+        "__v": 0
+    },
+    {
+        "_id": "68076468e32055c94a696cf5",
+        "blog": blog_data[4],
+        "name": "Peter Lawrence",
+        "content": "Honestly, I did not expect this to work, but it totally did. Saved my project!",
+        "isApproved": true,
+        "createdAt": "2025-04-22T09:42:00.444Z",
+        "updatedAt": "2025-04-22T10:24:55.626Z",
+        "__v": 0
+    }
+]
 
 export const dashboard_data = {
     "blogs": 10,
@@ -243,17 +240,16 @@ export const dashboard_data = {
     "recentBlogs": blog_data.slice(0, 5),
 }
 
-export const footer_data = [
-      {
-          title: "Quick Links",
-          links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
-      },
-      {
-          title: "Need Help?",
-          links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
-      },
-      {
-          title: "Follow Us",
-          links: ["Instagram", "Twitter", "Facebook", "YouTube"]
-      }
-  ];
+export const footer_data = [{
+        title: "Quick Links",
+        links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
+    },
+    {
+        title: "Need Help?",
+        links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
+    },
+    {
+        title: "Follow Us",
+        links: ["Instagram", "Twitter", "Facebook", "YouTube"]
+    }
+];
