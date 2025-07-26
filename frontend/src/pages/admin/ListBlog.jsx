@@ -11,7 +11,7 @@ const ListBlog = () => {
 
 	useEffect(() => {
 		fetchBlogs();
-	});
+	}, []);
 
 	return (
 		<div className='flex-1 px-5 pt-5 sm:pt-12 sm:pl-16 bg-blue-50/50'>
