@@ -181,6 +181,13 @@ export const blog_data = [{
     }
 ]
 
+export const blog_categories = [
+    'Technology',
+    'Startup',
+    'Lifestyle',
+    'Finance',
+];
+
 export const comments_data = [{
         "_id": "6811ed9e7836a82ba747cb25",
         "blog": blog_data[0],
