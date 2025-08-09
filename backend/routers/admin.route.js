@@ -8,5 +8,5 @@ const router = express.Router()
 router.post('/login', adminLogin)
 
 export {
-  router
+  router as adminRouter
 }
