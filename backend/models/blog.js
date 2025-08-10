@@ -21,13 +21,13 @@ const blogSchema = new mongoose.Schema({
     require: true
   },
   isPublished: {
-    type: String,
+    type: Boolean,
     require: true
   }
 }, {
   timestamps: true
 })
 
-const Blog = mongoose.model('blog', blogSchema)
+const Blog = mongoose.model('Blog', blogSchema)
 
 export default Blog
