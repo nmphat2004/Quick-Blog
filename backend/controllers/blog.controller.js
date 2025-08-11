@@ -119,6 +119,10 @@ const deleteBlogById = async (req, res) => {
 
     await Blog.findByIdAndDelete(id)
 
+    await Comment.deleteMany({
+      blog: id
+    })
+
     res.json({
       success: true,
       message: 'Blog Deleted Successfully'
