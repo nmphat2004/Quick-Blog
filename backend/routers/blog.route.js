@@ -19,7 +19,7 @@ router.get('/:blogId', getBlogById)
 router.post('/delete', auth, deleteBlogById)
 router.post('/toggle-publish', auth, togglePublish)
 router.post('/add-comment', addComment)
-router.get('/comments', getBlogComments)
+router.post('/comments', getBlogComments)
 
 export {
   router as blogRouter
