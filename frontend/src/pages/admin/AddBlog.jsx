@@ -1,19 +1,56 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { assets, blog_categories } from '../../assets/assets';
 import Quill from 'quill';
+import { useAppContext } from '../../context/AppContext';
+import toast from 'react-hot-toast';
 
 const AddBlog = () => {
+	const { axios } = useAppContext();
+
+	const [isAdding, setIsAdding] = useState(false);
 	const [image, setImage] = useState(false);
 	const [title, setTitle] = useState('');
 	const [subTitle, setSubTitle] = useState('');
-	const [Category, setCategory] = useState('');
-	const [isApproved, setIsApproved] = useState('');
+	const [category, setCategory] = useState('');
+	const [isPublished, setIsPublished] = useState(false);
 
 	const editorRef = useRef(null);
 	const quillRef = useRef(null);
 
-	const handleSubmit = (e) => {
-		e.prevenDefault();
+	const handleSubmit = async (e) => {
+		try {
+			e.preventDefault();
+			setIsAdding(true);
+
+			const blog = {
+				title,
+				subTitle,
+				description: quillRef.current.root.innerHTML,
+				category,
+				isPublished,
+			};
+			const formData = new FormData();
+
+			formData.append('blog', JSON.stringify(blog));
+			formData.append('image', image);
+
+			const { data } = await axios.post('/api/v1/blog/add', formData);
+
+			if (data.success) {
+				toast.success(data.message);
+				setImage(false);
+				setTitle('');
+				setSubTitle('');
+				quillRef.current.root.innerHTML = '';
+				setCategory('Startup');
+			} else {
+				toast.error(data.message);
+			}
+		} catch (error) {
+			toast.error(error.message);
+		} finally {
+			setIsAdding(false);
+		}
 	};
 
 	const generateContent = () => {
@@ -90,16 +127,17 @@ const AddBlog = () => {
 				<div className='flex gap-2 mt-4'>
 					<p>Publish Now</p>
 					<input
-						onChange={(e) => setIsApproved(e.target.checked)}
+						onChange={(e) => setIsPublished(e.target.checked)}
 						type='checkbox'
-						checked={isApproved}
+						checked={isPublished}
 						className='scale-125 cursor-pointer'
 					/>
 				</div>
 				<button
+					disabled={isAdding}
 					type='submit'
 					className='mt-8 w-40 h-10 bg-primary text-white rounded cursor-pointer text-sm'>
-					Add Blog
+					{isAdding ? 'Adding...' : 'Add Blog'}
 				</button>
 			</div>
 		</form>
