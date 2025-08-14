@@ -3,6 +3,7 @@ import {
   addBlog,
   addComment,
   deleteBlogById,
+  generateContent,
   getAllBlogs,
   getBlogById,
   getBlogComments,
@@ -20,6 +21,7 @@ router.post('/delete', auth, deleteBlogById)
 router.post('/toggle-publish', auth, togglePublish)
 router.post('/add-comment', addComment)
 router.post('/comments', getBlogComments)
+router.post('/generate', generateContent)
 
 export {
   router as blogRouter
