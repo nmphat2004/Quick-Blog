@@ -15,7 +15,7 @@ router.post('/login', adminLogin)
 router.get('/blogs', auth, getAllBlogsAdmin)
 router.get('/comments', auth, getAllComments)
 router.get('/dashboard', auth, getDashboard)
-router.delete('/delete-comment', auth, deleteCommentById)
+router.post('/delete-comment', auth, deleteCommentById)
 router.post('/approve-comment', auth, approveCommentById)
 
 export {

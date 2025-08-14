@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { assets } from '../../assets/assets';
 import BlogTableItem from '../../components/admin/BlogTableItem';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useAppContext } from '../../context/AppContext';
 
 const Dashboard = () => {
+	const { axios } = useAppContext();
+
 	const [dashboardData, setDashboardData] = useState({
 		blogs: 0,
 		comments: 0,

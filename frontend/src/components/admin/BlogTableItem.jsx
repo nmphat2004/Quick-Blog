@@ -2,7 +2,6 @@ import toast from 'react-hot-toast';
 import { assets } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContext';
 
-// eslint-disable-next-line no-unused-vars
 const BlogTableItem = ({ blog, fetchBlogs, index }) => {
 	const { title, createdAt } = blog;
 	const BlogDate = new Date(createdAt);
