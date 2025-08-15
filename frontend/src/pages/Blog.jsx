@@ -84,7 +84,7 @@ const Blog = () => {
 				</h1>
 				<h2 className='my-5 max-w-lg truncate mx-auto'>{data.subTitle}</h2>
 				<p className='inline-block px-4 py-1 rounded-full mb-6 border text-sm border-primary/35 bg-primary/5 font-medium text-primary'>
-					Mary
+					{data.author}
 				</p>
 			</div>
 

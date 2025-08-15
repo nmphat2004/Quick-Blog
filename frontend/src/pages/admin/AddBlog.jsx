@@ -12,6 +12,7 @@ const AddBlog = () => {
 	const [loading, setLoading] = useState(false);
 	const [image, setImage] = useState(false);
 	const [title, setTitle] = useState('');
+	const [author, setAuthor] = useState('');
 	const [subTitle, setSubTitle] = useState('');
 	const [category, setCategory] = useState('');
 	const [isPublished, setIsPublished] = useState(false);
@@ -29,6 +30,7 @@ const AddBlog = () => {
 				subTitle,
 				description: quillRef.current.root.innerHTML,
 				category,
+				author,
 				isPublished,
 			};
 			const formData = new FormData();
@@ -45,6 +47,7 @@ const AddBlog = () => {
 				setSubTitle('');
 				quillRef.current.root.innerHTML = '';
 				setCategory('Startup');
+				setAuthor('');
 			} else {
 				toast.error(data.message);
 			}
@@ -147,6 +150,14 @@ const AddBlog = () => {
 						);
 					})}
 				</select>
+				<p className='mt-4'>Author</p>
+				<input
+					type='text'
+					onChange={(e) => setAuthor(e.target.value)}
+					className='w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded'
+					value={author}
+					placeholder='Type here'
+				/>
 				<div className='flex gap-2 mt-4'>
 					<p>Publish Now</p>
 					<input

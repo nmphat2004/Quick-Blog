@@ -10,13 +10,14 @@ const addBlog = async (req, res) => {
       title,
       subTitle,
       description,
+      author,
       category,
       isPublished
     } = JSON.parse(req.body.blog)
     const imageFile = req.file
 
     // Check if all field are valid
-    if (!title || !description || !category || !imageFile) return res.json({
+    if (!title || !description || !author || !category || !imageFile) return res.json({
       success: false,
       message: 'Missing required field'
     })
@@ -51,6 +52,7 @@ const addBlog = async (req, res) => {
       title,
       subTitle,
       description,
+      author,
       category,
       image,
       isPublished
