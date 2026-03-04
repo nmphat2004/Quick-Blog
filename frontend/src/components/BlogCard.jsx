@@ -4,6 +4,11 @@ const BlogCard = ({ blog }) => {
 	const { _id, title, description, category, image } = blog;
 	const navigate = useNavigate();
 
+	const stripHtml = (html) => {
+		const doc = new DOMParser().parseFromString(html, 'text/html');
+		return doc.body.textContent || '';
+	};
+
 	return (
 		<div
 			onClick={() => navigate(`/blog/${_id}`)}
@@ -16,7 +21,9 @@ const BlogCard = ({ blog }) => {
 				<h5 className='mb-2 font-medium text-gray-900'>{title}</h5>
 				<p
 					className='mb-3 text-xs text-gray-600'
-					dangerouslySetInnerHTML={{ __html: description.slice(0, 80) }}></p>
+					dangerouslySetInnerHTML={{
+						__html: stripHtml(description).slice(0, 80),
+					}}></p>
 			</div>
 		</div>
 	);

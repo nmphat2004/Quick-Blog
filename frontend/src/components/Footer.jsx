@@ -7,10 +7,11 @@ const Footer = () => {
 				<div>
 					<img src={assets.logo} alt='logo' className='w-32 sm:w-44' />
 					<p className='max-w-[410px] mt-6'>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim sint
-						est rerum tempora, suscipit quaerat porro expedita soluta fuga optio
-						distinctio molestias voluptatibus accusantium delectus iste odio
-						asperiores perspiciatis consectetur?
+						Quickblog is an AI-powered blogging platform that helps you create,
+						edit, and publish professional-quality blog posts in minutes.
+						Whether you’re a business owner, content creator, or hobbyist
+						writer, Quickblog’s AI generates engaging, SEO-friendly articles
+						tailored to your audience — no writing block, no wasted time.
 					</p>
 				</div>
 

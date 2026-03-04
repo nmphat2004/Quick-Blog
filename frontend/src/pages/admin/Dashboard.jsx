@@ -18,9 +18,9 @@ const Dashboard = () => {
 		try {
 			const { data } = await axios.get('/api/v1/admin/dashboard');
 
-			data.success
-				? setDashboardData(data.dashboardData)
-				: toast.error(data.message);
+			data.success ?
+				setDashboardData(data.dashboardData)
+			:	toast.error(data.message);
 		} catch (error) {
 			toast.error(error.message);
 		}
@@ -72,7 +72,7 @@ const Dashboard = () => {
 					<p>Latest Blogs</p>
 				</div>
 
-				<div className='relative max-w-4xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white'>
+				<div className='relative max-w-6xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white'>
 					<table className='w-full text-sm text-gray-500'>
 						<thead className='text-xs text-gray-600 text-left uppercase'>
 							<tr>
