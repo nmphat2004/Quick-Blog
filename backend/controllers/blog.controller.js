@@ -141,12 +141,24 @@ const updateBlog = async (req, res) => {
 
 const getAllBlogs = async (req, res) => {
 	try {
+		const page = parseInt(req.query.page) || 1;
+		const limit = parseInt(req.query.limit) || 10;
+
+		const skip = (page - 1) * limit;
+
 		const blogs = await Blog.find({
 			isPublished: true,
-		});
+		})
+			.skip(skip)
+			.limit(limit);
+
+		const total = await Blog.countDocuments();
+
 		res.json({
 			success: true,
 			blogs,
+			page,
+			totalPages: Math.ceil(total / limit),
 		});
 	} catch (error) {
 		res.json({
