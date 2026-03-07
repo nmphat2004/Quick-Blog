@@ -28,20 +28,20 @@ const Login = () => {
 	};
 
 	return (
-		<div className='flex items-center justify-center h-screen'>
-			<div className='w-full max-w-sm p-6 max-md:m-6 border border-primary/30 shadow-xl shadow-primary/15 rounded-lg'>
+		<div className='flex items-center justify-center h-screen bg-white dark:bg-neutral-950 transition-colors duration-300'>
+			<div className='w-full max-w-sm p-6 max-md:m-6 border border-primary/30 shadow-xl shadow-primary/15 rounded-lg bg-white dark:bg-neutral-900'>
 				<div className='flex flex-col items-center justify-center'>
 					<div className='w-full py-6 text-center'>
-						<h1 className='text-3xl font-bold'>
+						<h1 className='text-3xl font-bold dark:text-gray-100'>
 							<span className='text-primary'>Admin</span> Login
 						</h1>
-						<p className='font-light'>
+						<p className='font-light dark:text-gray-400'>
 							Enter your credentials to access the admin panel
 						</p>
 					</div>
 					<form
 						onSubmit={handleSubmit}
-						className='mt-6 w-full sm:max-w-md text-gray-600'>
+						className='mt-6 w-full sm:max-w-md text-gray-600 dark:text-gray-300'>
 						<div className='flex items-center mb-6'>
 							<label className='w-[80px]'>Email: </label>
 							<input
@@ -50,7 +50,7 @@ const Login = () => {
 								value={email}
 								required
 								placeholder='Enter your email'
-								className='flex-1/2 border-b-2 border-gray-300 p-1 outline-none focus:border-gray-400'
+								className='flex-1/2 border-b-2 border-gray-300 dark:border-gray-600 p-1 outline-none focus:border-gray-400 dark:focus:border-gray-400 bg-transparent dark:text-gray-200 dark:placeholder-gray-500'
 							/>
 						</div>
 						<div className='flex items-center mb-6'>
@@ -61,7 +61,7 @@ const Login = () => {
 								value={password}
 								required
 								placeholder='Enter your password'
-								className='flex-1/2 border-b-2 border-gray-300 p-1 outline-none focus:border-gray-400'
+								className='flex-1/2 border-b-2 border-gray-300 dark:border-gray-600 p-1 outline-none focus:border-gray-400 dark:focus:border-gray-400 bg-transparent dark:text-gray-200 dark:placeholder-gray-500'
 							/>
 						</div>
 						<button

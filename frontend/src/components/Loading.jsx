@@ -1,7 +1,7 @@
 const Loading = () => {
 	return (
 		<div className='flex justify-center items-center h-screen col-span-full'>
-			<div className='animate-spin rounded-full h-16 w-16 border-4 border-t-white border-gray-700'></div>
+			<div className='animate-spin rounded-full h-16 w-16 border-4 border-t-primary dark:border-t-primary border-gray-200 dark:border-gray-700'></div>
 		</div>
 	);
 };

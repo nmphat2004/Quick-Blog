@@ -21,12 +21,12 @@ const ListBlog = () => {
 	}, []);
 
 	return (
-		<div className='flex-1 px-5 pt-5 sm:pt-12 sm:pl-16 bg-blue-50/50 min-h-screen'>
-			<h1>All blogs</h1>
+		<div className='flex-1 px-5 pt-5 sm:pt-12 sm:pl-16 bg-blue-50/50 dark:bg-neutral-950 min-h-screen transition-colors duration-300'>
+			<h1 className='dark:text-gray-100'>All blogs</h1>
 
-			<div className='relative h-4/5 mt-4 max-w-6xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white'>
-				<table className='w-full text-sm text-gray-500 relative'>
-					<thead className='text-xs text-gray-600 text-left uppercase top-0 sticky z-10 bg-white'>
+			<div className='relative h-4/5 mt-4 max-w-6xl overflow-x-auto shadow-sm dark:shadow-gray-900 border dark:border-gray-800 rounded-lg scrollbar-hide bg-white dark:bg-neutral-900'>
+				<table className='w-full text-sm text-gray-500 dark:text-gray-400 relative'>
+					<thead className='text-xs text-gray-600 dark:text-gray-300 text-left uppercase top-0 sticky z-10 bg-gray-50 dark:bg-neutral-800 border-b dark:border-gray-700'>
 						<tr>
 							<th scope='col' className='px-2 py-4 xl:px-6'>
 								#
@@ -45,7 +45,7 @@ const ListBlog = () => {
 							</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className='divide-y dark:divide-gray-800'>
 						{blogs.map((blog, index) => {
 							return (
 								<BlogTableItem

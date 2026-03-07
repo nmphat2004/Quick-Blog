@@ -51,33 +51,33 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
 	};
 
 	return (
-		<tr className='border-y border-gray-300'>
+		<tr className='hover:bg-gray-50 dark:hover:bg-neutral-800/50 transition-colors'>
 			<th className='px-2 py-4'> {index} </th>
-			<td className='px-2 py-4'>{title}</td>
+			<td className='px-2 py-4 dark:text-gray-200'>{title}</td>
 			<td className='px-2 py-4 max-sm:hidden'>{BlogDate.toDateString()}</td>
 			<td className='px-2 py-4 max-sm:hidden'>
 				<p
-					className={`${blog.isPublished ? 'text-green-600' : 'text-orange-700'
+					className={`${blog.isPublished ? 'text-green-600 dark:text-green-500' : 'text-orange-700 dark:text-orange-500'
 						}`}>
-					{blog.isPublished ? 'Published' : 'Unpublish'}
+					{blog.isPublished ? 'Published' : 'Unpublished'}
 				</p>
 			</td>
 			<td className='px-2 py-4 flex items-center text-xs gap-3'>
 				<button
 					onClick={togglePublish}
-					className='border px-2 py-0.5 mt-1 rounded cursor-pointer'>
+					className='border dark:border-gray-600 px-2 py-0.5 mt-1 rounded cursor-pointer'>
 					{blog.isPublished ? 'Unpublish' : 'Publish'}
 				</button>
 				<button
 					onClick={() => navigate(`/admin/update_blog/${blog._id}`)}
-					className='hover:text-orange-200/80 cursor-pointer'>
+					className='text-primary/70 hover:text-orange-400 cursor-pointer text-sm'>
 					<FaEdit />
 				</button>
 				<img
 					onClick={deleteBlog}
 					src={assets.cross_icon}
 					alt=''
-					className='hover:scale-110 transition-all cursor-pointer'
+					className='hover:scale-110 transition-all cursor-pointer dark:invert'
 				/>
 			</td>
 		</tr>

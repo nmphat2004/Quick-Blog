@@ -47,14 +47,14 @@ const CommentTableItem = ({ comment, fetchComments }) => {
 	};
 
 	return (
-		<tr className='order-y border-gray-300'>
-			<td className='px-6 py-4'>
-				<b className='font-medium text-gray-600'>Blog</b> : {blog.title}
+		<tr className='hover:bg-gray-50 dark:hover:bg-neutral-800/50 transition-colors'>
+			<td className='px-6 py-4 dark:text-gray-300'>
+				<b className='font-medium text-gray-600 dark:text-gray-400'>Blog</b> : <span className="dark:text-gray-200">{blog.title}</span>
 				<br />
 				<br />
-				<b className='font-medium text-gray-600'>Name</b> : {comment.name}
+				<b className='font-medium text-gray-600 dark:text-gray-400'>Name</b> : <span className="dark:text-gray-200">{comment.name}</span>
 				<br />
-				<b className='font-medium text-gray-600'>Comment</b> : {comment.content}
+				<b className='font-medium text-gray-600 dark:text-gray-400'>Comment</b> : <span className="dark:text-gray-200">{comment.content}</span>
 			</td>
 			<td className='px-6 py-4 max-sm:hidden'>
 				{BlogDate.toLocaleDateString()}
@@ -65,10 +65,10 @@ const CommentTableItem = ({ comment, fetchComments }) => {
 						<img
 							onClick={approveComment}
 							src={assets.tick_icon}
-							className='w-5 hover:scale-110 transition-all cursor-pointer'
+							className='w-5 hover:scale-110 transition-all cursor-pointer dark:invert'
 						/>
 					) : (
-						<p className='text-xs border border-gray-600 bg-gray-100 text-green-600 rounded-full px-3 py-1'>
+						<p className='text-xs border border-green-600/30 bg-green-50 dark:bg-green-900/10 text-green-600 dark:text-green-500 rounded-full px-3 py-1'>
 							Approved
 						</p>
 					)}
@@ -76,7 +76,7 @@ const CommentTableItem = ({ comment, fetchComments }) => {
 						onClick={deleteComment}
 						src={assets.bin_icon}
 						alt=''
-						className='w-5 hover:scale-110 transition-all cursor-pointer'
+						className='w-5 hover:scale-110 transition-all cursor-pointer dark:invert dark:opacity-80'
 					/>
 				</div>
 			</td>

@@ -66,94 +66,94 @@ const Blog = () => {
 	}, [id]);
 
 	return data ?
-			<div className='relative'>
-				<img
-					src={assets.gradientBackground}
-					alt=''
-					className='absolute -top-50 -z-1 opacity-50'
-				/>
+		<div className='relative'>
+			<img
+				src={assets.gradientBackground}
+				alt=''
+				className='absolute -top-50 -z-1 opacity-50 dark:opacity-20'
+			/>
 
-				<Navbar />
+			<Navbar />
 
-				<div className='text-center mt-20 text-gray-600'>
-					<p className='text-primary py-4 font-medium'>
-						Publish on {Moment(data.createAt).format('MM Do YYYY')}
-					</p>
-					<h1 className='text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto text-gray-800'>
-						{data.title}
-					</h1>
-					<h2 className='my-5 max-w-lg mx-auto'>{data.subTitle}</h2>
-					<p className='inline-block px-4 py-1 rounded-full mb-6 border text-sm border-primary/35 bg-primary/5 font-medium text-primary'>
-						{data.author}
-					</p>
-				</div>
+			<div className='text-center mt-20 text-gray-600 dark:text-gray-400'>
+				<p className='text-primary py-4 font-medium'>
+					Publish on {Moment(data.createAt).format('MM Do YYYY')}
+				</p>
+				<h1 className='text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto text-gray-800 dark:text-gray-100'>
+					{data.title}
+				</h1>
+				<h2 className='my-5 max-w-lg mx-auto'>{data.subTitle}</h2>
+				<p className='inline-block px-4 py-1 rounded-full mb-6 border text-sm border-primary/35 bg-primary/5 font-medium text-primary'>
+					{data.author}
+				</p>
+			</div>
 
-				<div className='mx-5 max-w-5xl md:mx-auto my-10 mt-6'>
-					<img src={data.image} alt='' className='rounded-3xl mb-5' />
-					<div
-						className='rich-text max-w-3xl mx-auto'
-						dangerouslySetInnerHTML={{ __html: data.description }}></div>
-				</div>
+			<div className='mx-5 max-w-5xl md:mx-auto my-10 mt-6'>
+				<img src={data.image} alt='' className='rounded-3xl mb-5' />
+				<div
+					className='rich-text max-w-3xl mx-auto'
+					dangerouslySetInnerHTML={{ __html: data.description }}></div>
+			</div>
 
-				<div>
-					<div className='mt-14 mb-10 max-w-3xl mx-auto'>
-						<p>Comments ({comments.length})</p>
-						<div>
-							{comments.map((item, index) => (
-								<div
-									key={index}
-									className='relative bg-primary/2 border border-primary/5 max-w-xl p-4 rounded text-gray-600'>
-									<div className='flex items-center gap-2 mb-2'>
-										<img src={assets.user_icon} alt='' className='w-6' />
-										<p className='font-medium'>{item.name}</p>
-									</div>
-									<p className='text-sm max-w-md ml-8'>{item.content}</p>
-									<div className='absolute right-4 bottom-3 flex items-center gap-2 text-xs'>
-										{Moment(item.createdAt).fromNow()}
-									</div>
+			<div>
+				<div className='mt-14 mb-10 max-w-3xl mx-auto'>
+					<p className='dark:text-gray-200'>Comments ({comments.length})</p>
+					<div>
+						{comments.map((item, index) => (
+							<div
+								key={index}
+								className='relative bg-primary/2 border border-primary/5 dark:border-primary/10 max-w-xl p-4 rounded text-gray-600 dark:text-gray-300 mt-4'>
+								<div className='flex items-center gap-2 mb-2'>
+									<img src={assets.user_icon} alt='' className='w-6' />
+									<p className='font-medium dark:text-gray-200'>{item.name}</p>
 								</div>
-							))}
-						</div>
-						<div className='max-w-3xl mx-auto'>
-							<p className='font-semibold mb-4'>Add your comment</p>
-							<form
-								onSubmit={addComment}
-								className='flex flex-col items-start gap-4 max-w-lg'>
-								<input
-									onChange={(e) => setName(e.target.value)}
-									value={name}
-									type='text'
-									className='w-full p-2 border border-gray-300 rounded outline-none'
-									placeholder='Name'
-									required
-								/>
-								<textarea
-									onChange={(e) => setContent(e.target.value)}
-									value={content}
-									placeholder='Comment'
-									className='w-full p-2 border border-gray-300 rounded outline-none h-48'></textarea>
-								<button
-									type='submit'
-									className='bg-primary text-white rounded p-2 px-8 hover:scale-102 transition-all cursor-pointer'>
-									Submit
-								</button>
-							</form>
-						</div>
-						<div className='my-24 max-w-3xl mx-auto'>
-							<p className='font-semibold my-4'>
-								Share this article on social media
-							</p>
-							<div className='flex'>
-								<img src={assets.facebook_icon} width={50} alt='' />
-								<img src={assets.twitter_icon} width={50} alt='' />
-								<img src={assets.googleplus_icon} width={50} alt='' />
+								<p className='text-sm max-w-md ml-8'>{item.content}</p>
+								<div className='absolute right-4 bottom-3 flex items-center gap-2 text-xs'>
+									{Moment(item.createdAt).fromNow()}
+								</div>
 							</div>
+						))}
+					</div>
+					<div className='max-w-3xl mx-auto'>
+						<p className='font-semibold mb-4 mt-8 dark:text-gray-200'>Add your comment</p>
+						<form
+							onSubmit={addComment}
+							className='flex flex-col items-start gap-4 max-w-lg'>
+							<input
+								onChange={(e) => setName(e.target.value)}
+								value={name}
+								type='text'
+								className='w-full p-2 border border-gray-300 dark:border-gray-600 rounded outline-none bg-white dark:bg-neutral-800 dark:text-gray-200 dark:placeholder-gray-500'
+								placeholder='Name'
+								required
+							/>
+							<textarea
+								onChange={(e) => setContent(e.target.value)}
+								value={content}
+								placeholder='Comment'
+								className='w-full p-2 border border-gray-300 dark:border-gray-600 rounded outline-none h-48 bg-white dark:bg-neutral-800 dark:text-gray-200 dark:placeholder-gray-500'></textarea>
+							<button
+								type='submit'
+								className='bg-primary text-white rounded p-2 px-8 hover:scale-102 transition-all cursor-pointer'>
+								Submit
+							</button>
+						</form>
+					</div>
+					<div className='my-24 max-w-3xl mx-auto'>
+						<p className='font-semibold my-4 dark:text-gray-200'>
+							Share this article on social media
+						</p>
+						<div className='flex'>
+							<img src={assets.facebook_icon} width={50} alt='' />
+							<img src={assets.twitter_icon} width={50} alt='' />
+							<img src={assets.googleplus_icon} width={50} alt='' />
 						</div>
 					</div>
 				</div>
-				<Footer />
 			</div>
-		:	<Loading />;
+			<Footer />
+		</div>
+		: <Loading />;
 };
 
 export default Blog;

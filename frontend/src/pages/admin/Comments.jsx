@@ -22,31 +22,29 @@ const Comments = () => {
 		fetchComments();
 	}, []);
 	return (
-		<div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50 min-h-screen'>
+		<div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50 dark:bg-neutral-950 min-h-screen transition-colors duration-300'>
 			<div className='flex justify-between items-center max-w-3xl'>
-				<h1>Comments</h1>
+				<h1 className='dark:text-gray-100'>Comments</h1>
 				<div className='flex gap-4'>
 					<button
 						onClick={() => setFilter('Approved')}
-						className={`shadow-custom-sm border rounded-full px-4 py-1 cursor-pointer text-xs ${
-							filter === 'Approved' ? 'text-primary' : 'text-gray-700'
-						}`}>
+						className={`shadow-custom-sm border dark:border-gray-700 rounded-full px-4 py-1 cursor-pointer text-xs ${filter === 'Approved' ? 'text-primary' : 'text-gray-700 dark:text-gray-300'
+							}`}>
 						Approved
 					</button>
 
 					<button
 						onClick={() => setFilter('Not Approved')}
-						className={`shadow-custom-sm border rounded-full px-4 py-1 cursor-pointer text-xs ${
-							filter === 'Not Approved' ? 'text-primary' : 'text-gray-700'
-						}`}>
+						className={`shadow-custom-sm border dark:border-gray-700 rounded-full px-4 py-1 cursor-pointer text-xs ${filter === 'Not Approved' ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300'
+							}`}>
 						Not Approved
 					</button>
 				</div>
 			</div>
 
-			<div className='relative h-4/5 max-w-3xl overflow-x-auto mt-4 bg-white rounded-lg scrollbar-hide'>
-				<table className=' w-full text-sm text-gray-500 relative'>
-					<thead className='text-xs text-gray-700 text-left uppercase sticky top-0 z-10 bg-white'>
+			<div className='relative h-4/5 max-w-3xl overflow-x-auto mt-4 shadow-sm dark:shadow-gray-900 border dark:border-gray-800 rounded-lg scrollbar-hide bg-white dark:bg-neutral-900'>
+				<table className=' w-full text-sm text-gray-500 dark:text-gray-400 relative'>
+					<thead className='text-xs text-gray-700 dark:text-gray-300 text-left uppercase sticky top-0 z-10 bg-gray-50 dark:bg-neutral-800 border-b dark:border-gray-800'>
 						<tr>
 							<th scope='col' className='px-6 py-3'>
 								Blog Title & Comment
@@ -59,7 +57,7 @@ const Comments = () => {
 							</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className='divide-y dark:divide-gray-800'>
 						{comments
 							.filter((comment) => {
 								if (filter === 'Approved') return comment.isApproved === true;

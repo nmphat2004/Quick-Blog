@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 * {
   font-family: "Outfit", sans-serif;
 }
@@ -84,4 +86,28 @@
 
 .rich-text a {
   color: #007AFF
+}
+
+/* Dark Mode Overrides for Rich Text */
+.dark .rich-text p {
+  color: #d1d5db; /* gray-300 */
+}
+
+.dark .rich-text h1,
+.dark .rich-text h2 {
+  color: #f9fafb !important; /* gray-50 */
+}
+
+.dark .rich-text h3,
+.dark .rich-text h4 {
+  color: #f3f4f6 !important; /* gray-100 */
+}
+
+.dark .rich-text h5,
+.dark .rich-text h6 {
+  color: #e5e7eb !important; /* gray-200 */
+}
+
+.dark .rich-text li {
+  color: #d1d5db;
 }

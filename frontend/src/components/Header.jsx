@@ -29,12 +29,12 @@ const Header = () => {
 					<img src={assets.star_icon} className='w-2.5' alt='' />
 				</div>
 
-				<h1 className=' text-3xl sm:text-6xl font-semibold sm:leading-16 text-gray-700'>
+				<h1 className=' text-3xl sm:text-6xl font-semibold sm:leading-16 text-gray-700 dark:text-gray-100'>
 					Your own <span className=' text-primary'>blogging</span> <br />{' '}
 					platform.
 				</h1>
 
-				<p className=' my-6 sm:my-8 max-w-2xl m-auto max-sm:text-xs text-gray-500'>
+				<p className=' my-6 sm:my-8 max-w-2xl m-auto max-sm:text-xs text-gray-500 dark:text-gray-400'>
 					This is your space to think out loud, to share what matters, and to
 					write without filters. Whether it's one word or a thousand, your story
 					starts right here.
@@ -42,11 +42,11 @@ const Header = () => {
 
 				<form
 					onSubmit={handleSubmit}
-					className='flex justify-between max-w-lg max-sm:scale-75 mx-auto border border-gray-300 bg-white rounded overflow-hidden'>
+					className='flex justify-between max-w-lg max-sm:scale-75 mx-auto border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 rounded overflow-hidden'>
 					<div className='relative flex flex-grow'>
 						<input
 							ref={inputRef}
-							className='w-full pl-4 pr-8 outline-none'
+							className='w-full pl-4 pr-8 outline-none bg-transparent text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-500'
 							type='text'
 							placeholder='Search for blogs'
 							required
@@ -55,7 +55,7 @@ const Header = () => {
 							<button
 								type='button'
 								onClick={handleClear}
-								className='absolute p-0.5 rounded-full h-6 w-6 right-2 flex items-center justify-center top-1/2 -translate-y-1/2 bg-gray-300 hover:bg-gray-400'>
+								className='absolute p-0.5 rounded-full h-6 w-6 right-2 flex items-center justify-center top-1/2 -translate-y-1/2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 dark:text-gray-200'>
 								×
 							</button>
 						)}
@@ -70,7 +70,7 @@ const Header = () => {
 			<img
 				src={assets.gradientBackground}
 				alt=''
-				className='absolute -top-50 -z-1 opacity-50'
+				className='absolute -top-50 -z-1 opacity-50 dark:opacity-20'
 			/>
 		</div>
 	);

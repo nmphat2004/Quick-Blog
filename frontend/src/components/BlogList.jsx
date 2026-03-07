@@ -74,15 +74,15 @@ const BlogList = () => {
 							onClick={() => setMenu(item)}
 							className={
 								menu === item
-									? 'text-white px-4 pt-0.5 cursor-pointer'
-									: 'text-gray-500 cursor-pointer'
+									? 'text-white px-4 pt-0.5 cursor-pointer relative'
+									: 'text-gray-500 dark:text-gray-400 cursor-pointer relative'
 							}>
-							{item}
+							<span className="relative z-10">{item}</span>
 							{menu === item && (
 								<motion.div
 									layoutId='underline'
 									transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-									className='absolute left-0 right-0 top-0 h-7 -z-1 bg-primary rounded-full'></motion.div>
+									className='absolute left-0 right-0 top-0 bottom-0 z-0 bg-primary rounded-full'></motion.div>
 							)}
 						</button>
 					</div>

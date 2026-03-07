@@ -107,14 +107,14 @@ const UpdateBlog = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='flex-1 bg-blue-50/50 text-gray-600 min-h-screen overflow-scroll'>
-			<div className='bg-white w-full max-w-3xl p-4 md:p-10 sm:m-10 shadow rounded'>
-				<p>Upload Thumbnail</p>
+			className='flex-1 bg-blue-50/50 dark:bg-neutral-950 text-gray-600 dark:text-gray-300 min-h-screen overflow-scroll transition-colors duration-300'>
+			<div className='bg-white dark:bg-neutral-900 w-full max-w-3xl p-4 md:p-10 sm:m-10 shadow dark:shadow-gray-900 border border-transparent dark:border-gray-800 rounded'>
+				<p className='dark:text-gray-200'>Upload Thumbnail</p>
 				<label htmlFor='image'>
 					<img
 						src={!image ? assets.upload_area : image}
 						alt=''
-						className='mt-2 h-16 rounded cursor-pointer'
+						className={!image ? 'mt-2 h-16 rounded cursor-pointer dark:invert dark:opacity-80' : 'mt-2 h-16 rounded cursor-pointer'}
 					/>
 					<input
 						onChange={(e) => setImage(e.target.files[0])}
@@ -123,44 +123,44 @@ const UpdateBlog = () => {
 						hidden
 					/>
 				</label>
-				<p className='mt-4'>Blog Title</p>
+				<p className='mt-4 dark:text-gray-200'>Blog Title</p>
 				<input
 					type='text'
 					onChange={(e) => setTitle(e.target.value)}
-					className='w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded'
+					className='w-full max-w-lg mt-2 p-2 border border-gray-300 dark:border-gray-700 outline-none rounded bg-transparent dark:text-gray-100 placeholder:dark:text-gray-500'
 					value={title}
 					placeholder='Type here'
 				/>
-				<p className='mt-4'>Sub title</p>
+				<p className='mt-4 dark:text-gray-200'>Sub title</p>
 				<input
 					type='text'
 					onChange={(e) => setSubTitle(e.target.value)}
-					className='w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded'
+					className='w-full max-w-lg mt-2 p-2 border border-gray-300 dark:border-gray-700 outline-none rounded bg-transparent dark:text-gray-100 placeholder:dark:text-gray-500'
 					value={subTitle}
 					placeholder='Type here'
 				/>
-				<p className='mt-4'>Blog Description</p>
-				<div className='max-w-lg h-74 pb-16 sm:pb-10 pt-2 relative'>
-					<div ref={editorRef}></div>
+				<p className='mt-4 dark:text-gray-200'>Blog Description</p>
+				<div className='max-w-lg h-74 pb-16 sm:pb-10 pt-2 relative dark:bg-neutral-800 rounded'>
+					<div ref={editorRef} className='dark:text-gray-100 dark:border-gray-700 h-full'></div>
 					{loading && (
-						<div className='absolute right-0 top-0 bottom-0 left-0 flex items-center justify-center bg-black/10 mt-2'>
-							<div className='w-8 h-8 border-2 border-t-transparent rounded-full animate-spin'></div>
+						<div className='absolute right-0 top-0 bottom-0 left-0 flex items-center justify-center bg-black/10 dark:bg-black/40 mt-2 z-10'>
+							<div className='w-8 h-8 border-2 border-t-white dark:border-gray-500 rounded-full animate-spin border-gray-400'></div>
 						</div>
 					)}
 					<button
 						disabled={loading}
-						className='absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 px-4 py-1.5 rounded hover:underline cursor-pointer'
+						className='absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 px-4 py-1.5 rounded hover:underline cursor-pointer z-10'
 						onClick={generateContent}
 						type='button'>
 						{loading ? 'Generating...' : 'Generate with AI'}
 					</button>
 				</div>
-				<p className='mt-4'>Blog Category</p>
+				<p className='mt-4 dark:text-gray-200'>Blog Category</p>
 				<select
 					onChange={(e) => setCategory(e.target.value)}
 					value={category}
 					name='category'
-					className='mt-2 px-3 py-2 border text-gray-500 border-gray-300 outline-none rounded'>
+					className='mt-2 px-3 py-2 border text-gray-500 dark:text-gray-300 border-gray-300 dark:border-gray-700 outline-none rounded bg-transparent dark:bg-neutral-800'>
 					<option value='' disabled>
 						-- Select Category --
 					</option>
@@ -172,21 +172,21 @@ const UpdateBlog = () => {
 						);
 					})}
 				</select>
-				<p className='mt-4'>Author</p>
+				<p className='mt-4 dark:text-gray-200'>Author</p>
 				<input
 					type='text'
 					onChange={(e) => setAuthor(e.target.value)}
-					className='w-full max-w-lg mt-2 p-2 border border-gray-300 outline-none rounded'
+					className='w-full max-w-lg mt-2 p-2 border border-gray-300 dark:border-gray-700 outline-none rounded bg-transparent dark:text-gray-100 placeholder:dark:text-gray-500'
 					value={author}
 					placeholder='Type here'
 				/>
-				<div className='flex gap-2 mt-4'>
+				<div className='flex gap-2 mt-4 dark:text-gray-200'>
 					<p>Publish Now</p>
 					<input
 						onChange={(e) => setIsPublished(e.target.checked)}
 						type='checkbox'
 						checked={isPublished}
-						className='scale-125 cursor-pointer'
+						className='scale-125 cursor-pointer accent-primary'
 					/>
 				</div>
 				<button
